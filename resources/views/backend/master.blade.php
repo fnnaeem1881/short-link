@@ -24,6 +24,7 @@
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="{{asset('frontend/assets')}}/css/style.css">
     <link rel="stylesheet" type="text/css" href="{{asset('frontend/assets')}}/css/jquery.mCustomScrollbar.css">
+   @yield('custom_css')
 </head>
 
 <body>
@@ -523,6 +524,8 @@
     <script src="{{asset('frontend/assets')}}/js/vartical-layout.min.js"></script>
     <script type="text/javascript" src="{{asset('frontend/assets')}}/pages/dashboard/custom-dashboard.js"></script>
     <script type="text/javascript" src="{{asset('frontend/assets')}}/js/script.min.js"></script>
+
+  @yield('custom_js')
 </body>
 </html>
 

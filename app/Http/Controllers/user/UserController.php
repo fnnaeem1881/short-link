@@ -18,7 +18,8 @@ class UserController extends Controller
         return view('backend.user.user_profile');
     }
     public function shortLink(){
-        return view('backend.user.shortlink');
+        $shortLinks=ShortLink::all();
+        return view('backend.user.shortlink',compact('shortLinks'));
     }
     public function  todayShortLink(){
         $link = AddWebsiteLink::where('status','Active')->limit(1)->first();
