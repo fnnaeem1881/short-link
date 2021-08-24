@@ -14,7 +14,7 @@
                     <tr>
                         <th>Link Name</th>
                         <th>Short Link</th>
-                        <th>Action</th>
+
                     </tr>
                     </thead>
                     <tbody>
@@ -22,7 +22,7 @@
                     <tr>
                         <td>{{$short_link->link_name}}</td>
                         <td>{{$short_link->short_link}}</td>
-                        <td>Edit/Delete</td>
+
 
 
                     </tr>
@@ -34,8 +34,6 @@
                     <tr>
                         <th>Website Name</th>
                         <th>Website Link</th>
-
-                        <th>Action</th>
                     </tr>
                     </tfoot>
                 </table>

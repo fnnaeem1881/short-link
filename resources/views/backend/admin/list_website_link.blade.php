@@ -16,7 +16,7 @@
                         <th>Website Link</th>
                         <th>View Count</th>
                         <th>Status</th>
-                        <th>Action</th>
+                        <th class="text-center">Action</th>
 
                     </tr>
                     </thead>
@@ -36,8 +36,17 @@
                             </div>
 
                         </td>
-                        <td>Edit/Delete</td>
+                        <td class="py-2 text-center">
+                            <div class="dt-buttons">
+                                <a href="{{route('list.website.link.edit',$websiteList->id)}}">
+                                    <button class="dt-button" tabindex="0" aria-controls="keyboard-btn" type="button"><span>Edit </span></button>
+                                </a>
 
+                                <a href="{{route('list.website.link.delete',$websiteList->id)}}">
+                                    <button class="dt-button" tabindex="0" aria-controls="keyboard-btn" type="button"><span>Delete </span></button>
+                                </a>
+                            </div>
+                        </td>
 
                     </tr>
                  @endforeach

@@ -35,6 +35,9 @@ route::group(['prefix'=>'admin','namespace'=>'admin','middleware'=>'admin'],func
     route::get('add/website/link','AdminController@addSiteLink')->name('add.website.link');
     route::post('save/website/link','AdminController@saveWebsiteLink')->name('save.website.link');
     route::get('list/website/link','AdminController@listWebsiteLink')->name('list.website.link');
+    route::get('list/website/link/edit/{id}','AdminController@listWebsiteLinkEdit')->name('list.website.link.edit');
+    route::post('list/website/link/edit/{id}','AdminController@listWebsiteLinkUpdate')->name('update.website.link');
+    route::get('list/website/link/delete/{id}','AdminController@listWebsiteLinkDelete')->name('list.website.link.delete');
 });
 route::group(['prefix'=>'author','namespace'=>'author','middleware'=>'author'],function(){
     route::get('authordashboard','AuthorController@authordashboard')->name('authordashboard');
