@@ -17,13 +17,12 @@ use Illuminate\Support\Facades\Route;
 //    return view('frontend.home');
 //});
 //menu route
+route::get('/clear','frontend\MenuController@clearAll')->name('clear');
 route::get('/','frontend\MenuController@home')->name('home');
-route::get('/home','frontend\MenuController@home')->name('home');
+route::get('/home','frontend\MenuController@home')->name('home.user');
 
 // page route
 Route::get('testpage','frontend\PageController@testpage')->name('testpage');
-
-
 
 
 
@@ -50,5 +49,6 @@ route::group(['prefix'=>'user','namespace'=>'user','middleware'=>'user'],functio
     route::get('shortlink/new','UserController@newShortLink')->name('shortLink.new');
     route::post('shortlink/save','UserController@saveShortLink')->name('shortLink.save');
     route::get('shortlink/all','UserController@myShortLinks')->name('shortLink.all');
+    route::post('shortlink/code/generate','ClickHistoryController@store')->name('code.generate');
 });
 

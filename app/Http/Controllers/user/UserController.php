@@ -18,7 +18,7 @@ class UserController extends Controller
         return view('backend.user.user_profile');
     }
     public function shortLink(){
-        $shortLinks=ShortLink::all();
+        $shortLinks=ShortLink::orderBy('id','DESC')->get();
         return view('backend.user.shortlink',compact('shortLinks'));
     }
     public function  todayShortLink(){
@@ -34,7 +34,7 @@ class UserController extends Controller
     public function saveShortLink(Request $request){
         $request->validate([
             'link_name' => 'required',
-            'short_link' => 'required|url'
+            'short_link' => 'required'
         ]);
         $longAddress = $this->getOriginalURL($request->short_link);
         $active = AddWebsiteLink::where('status','Active')->limit(1)->first();
@@ -56,9 +56,21 @@ class UserController extends Controller
         $short_links = ShortLink::where('user_id',auth()->user()->id)->orderBy('id','desc')->get();
         return view('backend.user.my_short_links',compact('short_links'));
     }
+    // function to retrieve the effective url from shortend url
     private function getOriginalURL($url) {
-        $longURL = get_headers($url, 7);
-        return $longURL['Location'];
+        $rurl = "https://api.redirect-checker.net/?url=".$url."&timeout=10&maxhops=10&meta-refresh=1&format=json&more=1";
+        $res = \Illuminate\Support\Facades\Http::get($rurl);
+        $result = $res->json();
+        if($result == null){
+            return $url;
+        }
+        $last = end($result['data']);
+        //dd($last['response']);
+        if($last['response']==false){
+            return $url;
+        }else{
+            return $last['response']['info']['url'];
+        }
     }
 
 }
