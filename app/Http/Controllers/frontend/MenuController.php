@@ -20,7 +20,11 @@ class MenuController extends Controller
         $api_url = "https://vpnapi.io/api/".$ip."?key=cd6d9b1327a94a5b84647598e6a76ce2";
         $res = \Illuminate\Support\Facades\Http::get($api_url);
         $result =json_decode($res);
+        //dd($result);
         if($result->security->vpn == false){
+            session(['ip' => $result->ip]);
+            session(['location' => $result->location]);
+            session(['network' => $result->network]);
             return view('frontend.home');
         }else{
             return "Please Off your vpn connection";

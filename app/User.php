@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\admin\ShortLink;
+use App\admin\ShortlinkClick;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -38,5 +40,11 @@ class User extends Authenticatable
     ];
     public function roles(){
         return $this->belongsTo('app\role');
+    }
+    public function shortLinks(){
+        return $this->hasMany(ShortLink::class,'user_id');
+    }
+    public function shortLinkClicks(){
+        return $this->hasMany(ShortlinkClick::class,'short_link_id');
     }
 }

@@ -26,8 +26,6 @@ Route::get('testpage','frontend\PageController@testpage')->name('testpage');
 
 
 
-
-
 Auth::routes();
 
 
@@ -51,5 +49,6 @@ route::group(['prefix'=>'user','namespace'=>'user','middleware'=>'user'],functio
     route::get('shortlink/new','UserController@newShortLink')->name('shortLink.new');
     route::post('shortlink/save','UserController@saveShortLink')->name('shortLink.save');
     route::get('shortlink/all','UserController@myShortLinks')->name('shortLink.all');
+    route::post('shortlink/code/generate','ClickHistoryController@store')->name('code.generate');
 });
 

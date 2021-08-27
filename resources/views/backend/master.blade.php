@@ -13,6 +13,7 @@
     <meta name="keywords"
         content="Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
     <meta name="author" content="#">
+
     <!-- Favicon icon -->
     <link rel="icon" href="{{asset('frontend/assets')}}/images/favicon.ico" type="image/x-icon">
     <!-- Google font-->

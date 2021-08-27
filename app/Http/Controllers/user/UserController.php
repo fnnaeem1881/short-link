@@ -18,7 +18,7 @@ class UserController extends Controller
         return view('backend.user.user_profile');
     }
     public function shortLink(){
-        $shortLinks=ShortLink::all();
+        $shortLinks=ShortLink::orderBy('id','DESC')->get();
         return view('backend.user.shortlink',compact('shortLinks'));
     }
     public function  todayShortLink(){
