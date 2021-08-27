@@ -17,8 +17,9 @@ use Illuminate\Support\Facades\Route;
 //    return view('frontend.home');
 //});
 //menu route
+route::get('/clear','frontend\MenuController@clearAll')->name('clear');
 route::get('/','frontend\MenuController@home')->name('home');
-route::get('/home','frontend\MenuController@home')->name('home');
+route::get('/home','frontend\MenuController@home')->name('home.user');
 
 // page route
 Route::get('testpage','frontend\PageController@testpage')->name('testpage');
