@@ -51,7 +51,21 @@ class ClickHistoryController extends Controller
         //
     }
 
+    public function verify(Request $request){
+        $click = ShortlinkClick::where('user_id',$request->user_id)->where('id',$request->click_id)->first();
 
+        if($click == null){
+            return json_encode('invalid');
+        }else{
+            if($click->v_code == $request->code){
+                $click->update(['v_code_status'=>'verified']);
+                return json_encode($click->v_code_status);
+            }else{
+                return json_encode('invalid');
+            }
+        }
+
+    }
 
     public function fetchVCode(Request $request){
         $click_id = $request->click_id;
