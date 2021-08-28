@@ -51,26 +51,14 @@ class ClickHistoryController extends Controller
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+
+    public function fetchVCode(Request $request){
+        $click_id = $request->click_id;
+        $his = ShortlinkClick::where('id',$click_id)->first();
+        if ($his==null){
+            return response()->json([false]);
+        }
+        return response()->json([$his->v_code]);
     }
 }
