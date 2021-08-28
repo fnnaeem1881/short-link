@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 route::get('/clear','frontend\MenuController@clearAll')->name('clear');
 route::get('/','frontend\MenuController@home')->name('home');
 route::get('/home','frontend\MenuController@home')->name('home.user');
+//route::get('shoertlink/fetch/vcode','user\ClickHistoryController@fetchVCode')->middleware('cors')->name('vCode.fetch');
 
 // page route
 Route::get('testpage','frontend\PageController@testpage')->name('testpage');
@@ -50,5 +51,5 @@ route::group(['prefix'=>'user','namespace'=>'user','middleware'=>'user'],functio
     route::post('shortlink/save','UserController@saveShortLink')->name('shortLink.save');
     route::get('shortlink/all','UserController@myShortLinks')->name('shortLink.all');
     route::post('shortlink/code/generate','ClickHistoryController@store')->name('code.generate');
-});
+    });
 
