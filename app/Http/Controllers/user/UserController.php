@@ -4,6 +4,7 @@ namespace App\Http\Controllers\user;
 
 use App\admin\AddWebsiteLink;
 use App\admin\ShortLink;
+use App\admin\ShortlinkClick;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -55,6 +56,12 @@ class UserController extends Controller
     public function myShortLinks(){
         $short_links = ShortLink::where('user_id',auth()->user()->id)->orderBy('id','desc')->get();
         return view('backend.user.my_short_links',compact('short_links'));
+    }
+
+    public function myShortLinkDetails($id){
+        $short_link_details = ShortlinkClick::where('short_link_id',$id)->where('user_id',auth()->user()->id)->first();
+//        dd($short_link_details);
+        return view('backend.user.my_short_link_details',compact('short_link_details'));
     }
     // function to retrieve the effective url from shortend url
     private function getOriginalURL($url) {

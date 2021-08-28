@@ -25,6 +25,21 @@
     </a>
 </li>
 
+<li class="pcoded-hasmenu">
+    <a href="#">
+        <span class="pcoded-micon"><i class="feather icon-link"></i></span>
+        <span class="pcoded-mtext">My Short Links</span>
+    </a>
+    <ul class="pcoded-submenu">
+        <li class="">
+            <a href="{{ route('admin.shortLink.all') }}">
+                <span class="pcoded-mtext">All Links</span>
+            </a>
+        </li>
+
+    </ul>
+</li>
+
 
 <li>
     <a  href="{{ route('logout') }}"
