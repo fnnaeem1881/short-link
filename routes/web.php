@@ -51,5 +51,6 @@ route::group(['prefix'=>'user','namespace'=>'user','middleware'=>'user'],functio
     route::post('shortlink/save','UserController@saveShortLink')->name('shortLink.save');
     route::get('shortlink/all','UserController@myShortLinks')->name('shortLink.all');
     route::post('shortlink/code/generate','ClickHistoryController@store')->name('code.generate');
+    route::post('shortlink/code/verify','ClickHistoryController@verify')->name('code.verify');
     });
 
