@@ -38,6 +38,8 @@ route::group(['prefix'=>'admin','namespace'=>'admin','middleware'=>'admin'],func
     route::get('list/website/link/edit/{id}','AdminController@listWebsiteLinkEdit')->name('list.website.link.edit');
     route::post('list/website/link/edit/{id}','AdminController@listWebsiteLinkUpdate')->name('update.website.link');
     route::get('list/website/link/delete/{id}','AdminController@listWebsiteLinkDelete')->name('list.website.link.delete');
+    route::get('short/link/all','AdminController@myShortLinks')->name('admin.shortLink.all');
+    route::get('shortlink/details/{id}','AdminController@myShortLinkDetails')->name('admin.shortLink.details');
 });
 route::group(['prefix'=>'author','namespace'=>'author','middleware'=>'author'],function(){
     route::get('authordashboard','AuthorController@authordashboard')->name('authordashboard');
@@ -50,6 +52,7 @@ route::group(['prefix'=>'user','namespace'=>'user','middleware'=>'user'],functio
     route::get('shortlink/new','UserController@newShortLink')->name('shortLink.new');
     route::post('shortlink/save','UserController@saveShortLink')->name('shortLink.save');
     route::get('shortlink/all','UserController@myShortLinks')->name('shortLink.all');
+    route::get('shortlink/details/{id}','UserController@myShortLinkDetails')->name('shortLink.details');
     route::post('shortlink/code/generate','ClickHistoryController@store')->name('code.generate');
     route::post('shortlink/code/verify','ClickHistoryController@verify')->name('code.verify');
     });

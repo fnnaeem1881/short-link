@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\admin;
 
 use App\admin\AddWebsiteLink;
+use App\admin\ShortLink;
+use App\admin\ShortlinkClick;
 use App\Http\Controllers\Controller;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
@@ -86,6 +88,18 @@ class AdminController extends Controller
         return redirect()->route('list.website.link');
 
 
+    }
+
+    public function myShortLinks(){
+        $short_links = ShortLink::orderBy('id','desc')->get();
+//        dd($short_links);
+        return view('backend.admin.my_short_links',compact('short_links'));
+    }
+
+    public function myShortLinkDetails($id){
+        $short_link_details = ShortlinkClick::where('short_link_id',$id)->first();
+//        dd($short_link_details);
+        return view('backend.admin.my_short_link_details',compact('short_link_details'));
     }
 
 

@@ -24,7 +24,7 @@
                         <td>{{$short_link->link_name}}</td>
                         <td>{{$short_link->short_link}}</td>
                         <td>
-                           <a href="{{route('shortLink.details',$short_link->id)}}">
+                           <a href="{{route('admin.shortLink.details',$short_link->id)}}">
                                <button class="btn btn-success">Details</button>
                            </a>
                         </td>
