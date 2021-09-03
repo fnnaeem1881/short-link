@@ -29,6 +29,30 @@
                                     <span class="messages"></span>
                                 </div>
                             </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Short Link :</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control"
+                                           id="short_link" name="short_link" value="{{$websiteListEdit->short_link}}" required>
+                                    <span class="messages"></span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">View Count :</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control"
+                                           id="view_count" name="view_count" value="{{$websiteListEdit->view_count}}" required>
+                                    <span class="messages"></span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Per View Point :</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control"
+                                           id="per_view_point" name="per_view_point" value="{{$websiteListEdit->per_view_point}}" required>
+                                    <span class="messages"></span>
+                                </div>
+                            </div>
                             <div class="row">
                                 <label class="col-sm-2 col-form-label">Status</label>
                                 <div class="col-sm-10">
