@@ -1,4 +1,4 @@
-@extends('backend.user.navaigation')
+@extends('backend.admin.navaigation')
 @section('usercontent')
     <!-- Page body start -->
     <div class="card">

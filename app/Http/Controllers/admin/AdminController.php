@@ -27,14 +27,17 @@ class AdminController extends Controller
 
         $request->validate([
             'website_link' => 'required|url',
-            'website_name' => 'required'
+            'website_name' => 'required',
+            'short_link' => 'required',
+            'expected_view' => 'required|numeric',
+            'per_view_point' => 'required|numeric',
         ]);
 
         $saveWebsiteLink = new AddWebsiteLink();
         $saveWebsiteLink->website_name = $request->website_name;
         $saveWebsiteLink->website_link = $request->website_link;
         $saveWebsiteLink->short_link = $request->short_link;
-        $saveWebsiteLink->view_count = $request->view_count;
+        $saveWebsiteLink->expected_view = $request->expected_view;
         $saveWebsiteLink->per_view_point = $request->per_view_point;
         $saveWebsiteLink->status = $request->status;
         if($saveWebsiteLink->status=='Active'){
@@ -45,9 +48,8 @@ class AdminController extends Controller
             }
         }
         $saveWebsiteLink->save();
-
+        session()->flash('successMessage','Link Saved!');
         return redirect()->route('list.website.link');
-
 
     }
 
@@ -79,19 +81,29 @@ class AdminController extends Controller
 
         $request->validate([
             'website_link' => 'required|url',
-            'website_name' => 'required'
+            'website_name' => 'required',
+            'short_link' => 'required',
+            'expected_view' => 'required|numeric',
+            'per_view_point' => 'required|numeric',
         ]);
 
         $websiteUpdate->website_name = $request->website_name;
         $websiteUpdate->website_link = $request->website_link;
         $websiteUpdate->short_link = $request->short_link;
-        $websiteUpdate->view_count = $request->view_count;
+        $websiteUpdate->expected_view = $request->expected_view;
         $websiteUpdate->per_view_point = $request->per_view_point;
         $websiteUpdate->status = $request->status;
+
+        if($websiteUpdate->status=='Active'){
+            $links=AddWebsiteLink::where('status','Active')->where('id','!=',$websiteUpdate->id)->get();
+            foreach ($links as $link){
+                $link->status = 'Inactive';
+                $link->save();
+            }
+        }
         $websiteUpdate->save();
-
+        session()->flash('successMessage','Information Updated!');
         return redirect()->route('list.website.link');
-
 
     }
 
