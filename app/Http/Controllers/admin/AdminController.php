@@ -31,9 +31,11 @@ class AdminController extends Controller
         ]);
 
         $saveWebsiteLink = new AddWebsiteLink();
-
         $saveWebsiteLink->website_name = $request->website_name;
         $saveWebsiteLink->website_link = $request->website_link;
+        $saveWebsiteLink->short_link = $request->short_link;
+        $saveWebsiteLink->view_count = $request->view_count;
+        $saveWebsiteLink->per_view_point = $request->per_view_point;
         $saveWebsiteLink->status = $request->status;
         if($saveWebsiteLink->status=='Active'){
             $links=AddWebsiteLink::where('status','Active')->get();
@@ -82,6 +84,9 @@ class AdminController extends Controller
 
         $websiteUpdate->website_name = $request->website_name;
         $websiteUpdate->website_link = $request->website_link;
+        $websiteUpdate->short_link = $request->short_link;
+        $websiteUpdate->view_count = $request->view_count;
+        $websiteUpdate->per_view_point = $request->per_view_point;
         $websiteUpdate->status = $request->status;
         $websiteUpdate->save();
 

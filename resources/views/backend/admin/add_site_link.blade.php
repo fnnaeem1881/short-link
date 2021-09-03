@@ -29,6 +29,33 @@
                                     <span class="messages"></span>
                                 </div>
                             </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Short Link :</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control"
+                                           id="short_link" name="short_link"
+                                           placeholder="Please Input Your Short Link..." required>
+                                    <span class="messages"></span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">View Count:</label>
+                                <div class="col-sm-10">
+                                    <input type="number" class="form-control"
+                                           id="view_count" name="view_count"
+                                           placeholder="Please Input Your Website View Count..." required>
+                                    <span class="messages"></span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Per View Point :</label>
+                                <div class="col-sm-10">
+                                    <input type="number" class="form-control"
+                                           id="per_view_point" name="per_view_point"
+                                           placeholder="Please Input Your Per View Point..." required>
+                                    <span class="messages"></span>
+                                </div>
+                            </div>
                             <div class="row">
                                 <label class="col-sm-2 col-form-label">Status</label>
                                 <div class="col-sm-10">

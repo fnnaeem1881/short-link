@@ -17,6 +17,8 @@ class CreateAddWebsiteLinksTable extends Migration
             $table->id();
             $table->string('website_name')->unique();
             $table->string('website_link')->nullable();
+            $table->string('short_link')->nullable();
+            $table->string('per_view_point')->nullable();
             $table->string('view_count')->nullable();
             $table->string('status');
             $table->timestamps();
