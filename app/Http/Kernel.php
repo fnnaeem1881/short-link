@@ -66,5 +66,6 @@ class Kernel extends HttpKernel
         'author' => \App\Http\Middleware\AuthorMiddleware::class,
         'user' => \App\Http\Middleware\UserMiddleware::class,
         'cors' => \Fruitcake\Cors\HandleCors::class,
+        'checkVpn' => \App\Http\Middleware\CheckVPN::class,
     ];
 }

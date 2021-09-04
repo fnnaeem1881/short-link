@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 //});
 //menu route
 route::get('/clear','frontend\MenuController@clearAll')->name('clear');
-route::get('/','frontend\MenuController@home')->name('home');
+route::get('/','frontend\MenuController@home')->middleware('checkVpn')->name('home');
 route::get('/home','frontend\MenuController@home')->name('home.user');
 //route::get('shoertlink/fetch/vcode','user\ClickHistoryController@fetchVCode')->middleware('cors')->name('vCode.fetch');
 
@@ -44,7 +44,7 @@ route::group(['prefix'=>'admin','namespace'=>'admin','middleware'=>'admin'],func
 route::group(['prefix'=>'author','namespace'=>'author','middleware'=>'author'],function(){
     route::get('authordashboard','AuthorController@authordashboard')->name('authordashboard');
 });
-route::group(['prefix'=>'user','namespace'=>'user','middleware'=>'user'],function(){
+route::group(['prefix'=>'user','namespace'=>'user','middleware'=>['user','checkVpn']],function(){
     route::get('userdashboard','UserController@index')->name('userdashboard');
     route::get('user_profile','UserController@user_profile')->name('user_profile');
     route::get('shortlink','UserController@shortlink')->name('shortlink');
@@ -55,5 +55,5 @@ route::group(['prefix'=>'user','namespace'=>'user','middleware'=>'user'],functio
     route::get('shortlink/details/{id}','UserController@myShortLinkDetails')->name('shortLink.details');
     route::post('shortlink/code/generate','ClickHistoryController@store')->name('code.generate');
     route::post('shortlink/code/verify','ClickHistoryController@verify')->name('code.verify');
-    });
+});
 
