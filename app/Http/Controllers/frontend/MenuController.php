@@ -10,19 +10,7 @@ use Illuminate\Support\Facades\Artisan;
 class MenuController extends Controller
 {
     public function home(Request $request){
-        if(session('ip')==null){
-            return $this->vpnCheck('frontend.home');
-        }else{
-            $ip = IPHelper::get_client_ip();
-            if($ip=='UNKNOWN'){
-                $ip = file_get_contents("http://ipecho.net/plain");
-            }
-            if(session('ip')==$ip){
-                return view('frontend.home');
-            }else{
-                return $this->vpnCheck('frontend.home');
-            }
-        }
+       return view('frontend.home');
     }
     public function clearAll(){
         $exitCode = Artisan::call('route:cache');
@@ -33,11 +21,4 @@ class MenuController extends Controller
         echo 'all cache cleared';
     }
 
-    public function vpnCheck($view){
-        if (IPHelper::checkVpn()){
-            return view($view);
-        }else{
-            return "Please Off your vpn or proxy connection connection";
-        }
-    }
 }
