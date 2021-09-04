@@ -41,8 +41,10 @@
                                 <div class="to-do-label">
                                     <div class="checkbox-fade fade-in-primary">
                                         @foreach($shortLinks as $shortLink)
-                                        <label class="check-task" id="current_id{{$shortLink->id}}">
-                                                <span class="task-title-sp">{{$shortLink->link_name}}
+                                            @if(count($shortLink->shortLinkClicks)<1)
+                                        <label class="check-task " id="current_id{{$shortLink->id}}">
+                                                <span class="task-title font-weight-bold">{{ucfirst($shortLink->website_name)}}
+                                                    &nbsp;<span class="text-c-blue">{{$shortLink->short_link}}</span>
                                                     <form style="display: none" id="sh_form{{$shortLink->id}}" action="#">
                                                       <span style="margin-left: 220px;" ><input id="short_link_code{{$shortLink->id}}" type="text" class="" placeholder="Please Input Your Code..."></span>
                                                         <span  id="short_link_submit" class="f-right">
@@ -57,6 +59,7 @@
                                              </span>
 
                                         </label>
+                                            @endif
                                         @endforeach
                                     </div>
                                 </div>
@@ -97,7 +100,7 @@
                 },
                 success:function (response) {
                     var result = $.parseJSON(response);
-                    var url = result['link']+"?click_id="+result['id'];
+                    var url = result['link'];
                     alert("Please complete the task given and collect verification code!\nEnter that code in below given form!");
                     window.open(url, "_blank");
                     document.getElementById("sh_form"+id).style.display = "inline";

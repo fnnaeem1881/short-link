@@ -38,15 +38,15 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">View Count :</label>
+                                <label class="col-sm-2 col-form-label">Expected View :</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control"
-                                           id="view_count" name="view_count" value="{{$websiteListEdit->view_count}}" required>
+                                           id="expected_view" name="expected_view" value="{{$websiteListEdit->expected_view}}" required>
                                     <span class="messages"></span>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">Per View Point :</label>
+                                <label class="col-sm-2 col-form-label">Point Per View:</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control"
                                            id="per_view_point" name="per_view_point" value="{{$websiteListEdit->per_view_point}}" required>

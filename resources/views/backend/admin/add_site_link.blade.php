@@ -39,20 +39,20 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">View Count:</label>
+                                <label class="col-sm-2 col-form-label">Expected View:</label>
                                 <div class="col-sm-10">
                                     <input type="number" class="form-control"
-                                           id="view_count" name="view_count"
-                                           placeholder="Please Input Your Website View Count..." required>
+                                           id="expected_view" name="expected_view"
+                                           placeholder="How many views do you want?..." required>
                                     <span class="messages"></span>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">Per View Point :</label>
+                                <label class="col-sm-2 col-form-label">Point Per View:</label>
                                 <div class="col-sm-10">
                                     <input type="number" class="form-control"
                                            id="per_view_point" name="per_view_point"
-                                           placeholder="Please Input Your Per View Point..." required>
+                                           placeholder="PHow many points you want to give per view..." required>
                                     <span class="messages"></span>
                                 </div>
                             </div>

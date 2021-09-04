@@ -13,6 +13,6 @@ class ShortlinkClick extends Model
         return $this->belongsTo(User::class,'user_id');
     }
     public function shortLink(){
-        return $this->hasMany(ShortLink::class,'short_link_id');
+        return $this->belongsTo(AddWebsiteLink::class,'short_link_id');
     }
 }

@@ -18,7 +18,7 @@ class CreateShortlinkClicksTable extends Migration
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('set null');
             $table->unsignedBigInteger('short_link_id');
-            $table->foreign('short_link_id')->references('id')->on('short_links')->onDelete('restrict')->onUpdate('cascade');
+            $table->foreign('short_link_id')->references('id')->on('add_website_links')->onDelete('restrict')->onUpdate('cascade');
             $table->string('ip', 50)->default(null);
             $table->string('city',100)->default(null);
             $table->string('country',100)->default(null);
@@ -28,8 +28,7 @@ class CreateShortlinkClicksTable extends Migration
             $table->string('network',100)->default(null);
             $table->string('service_provider_id',20)->default(null);
             $table->string('service_provider',255)->default(null);
-            $table->integer('v_code');
-            $table->string('v_code_status')->default('pending');
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }

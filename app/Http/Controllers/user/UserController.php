@@ -5,13 +5,35 @@ namespace App\Http\Controllers\user;
 use App\admin\AddWebsiteLink;
 use App\admin\ShortLink;
 use App\admin\ShortlinkClick;
+use App\helpers\IPHelper;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use function Psy\sh;
 
 class UserController extends Controller
 {
-
     public function index(){
+        if(session('ip')==null){
+            if(IPHelper::checkVpn()){
+                return view('backend.user.userdashboard');
+            }else{
+                return "Please disable your vpn or proxy and refresh the browser";
+            }
+        }else{
+            $ip = IPHelper::get_client_ip();
+            if($ip=='UNKNOWN'){
+                $ip = file_get_contents("http://ipecho.net/plain");
+            }
+            if(session('ip')==$ip){
+                return view('backend.user.userdashboard');
+            }else{
+                if(IPHelper::checkVpn()){
+                    return view('backend.user.userdashboard');
+                }else{
+                    return "Please disable your vpn or proxy and refresh the browser";
+                }
+            }
+        }
         return view('backend.user.userdashboard');
     }
 
@@ -19,7 +41,30 @@ class UserController extends Controller
         return view('backend.user.user_profile');
     }
     public function shortLink(){
-        $shortLinks=ShortLink::orderBy('id','DESC')->get();
+        $shortLinks=AddWebsiteLink::with(['shortLinkClicks'=>function($query){
+            return $query->where('user_id',auth()->user()->id)->where('status','=','verified')->get();
+        }])->orderBy('id','DESC')->get();
+        if(session('ip')==null){
+            if(IPHelper::checkVpn()){
+                return view('backend.user.shortlink',compact('shortLinks'));
+            }else{
+                return "Please disable your vpn or proxy and refresh the browser";
+            }
+        }else{
+            $ip = IPHelper::get_client_ip();
+            if($ip=='UNKNOWN'){
+                $ip = file_get_contents("http://ipecho.net/plain");
+            }
+            if(session('ip')==$ip){
+                return view('backend.user.shortlink',compact('shortLinks'));
+            }else{
+                if(IPHelper::checkVpn()){
+                    return view('backend.user.shortlink',compact('shortLinks'));
+                }else{
+                    return "Please disable your vpn or proxy and refresh the browser";
+                }
+            }
+        }
         return view('backend.user.shortlink',compact('shortLinks'));
     }
     public function  todayShortLink(){
@@ -55,12 +100,53 @@ class UserController extends Controller
     }
     public function myShortLinks(){
         $short_links = ShortLink::where('user_id',auth()->user()->id)->orderBy('id','desc')->get();
+        if(session('ip')==null){
+            if(IPHelper::checkVpn()){
+                return view('backend.user.my_short_links',compact('short_links'));
+            }else{
+                return "Please disable your vpn or proxy and refresh the browser";
+            }
+        }else{
+            $ip = IPHelper::get_client_ip();
+            if($ip=='UNKNOWN'){
+                $ip = file_get_contents("http://ipecho.net/plain");
+            }
+            if(session('ip')==$ip){
+                return view('backend.user.my_short_links',compact('short_links'));
+            }else{
+                if(IPHelper::checkVpn()){
+                    return view('backend.user.my_short_links',compact('short_links'));
+                }else{
+                    return "Please disable your vpn or proxy and refresh the browser";
+                }
+            }
+        }
         return view('backend.user.my_short_links',compact('short_links'));
     }
 
     public function myShortLinkDetails($id){
         $short_link_details = ShortlinkClick::where('short_link_id',$id)->where('user_id',auth()->user()->id)->first();
-//        dd($short_link_details);
+        if(session('ip')==null){
+            if(IPHelper::checkVpn()){
+                return view('backend.user.my_short_link_details',compact('short_link_details'));
+            }else{
+                return "Please disable your vpn or proxy and refresh the browser";
+            }
+        }else{
+            $ip = IPHelper::get_client_ip();
+            if($ip=='UNKNOWN'){
+                $ip = file_get_contents("http://ipecho.net/plain");
+            }
+            if(session('ip')==$ip){
+                return view('backend.user.my_short_link_details',compact('short_link_details'));
+            }else{
+                if(IPHelper::checkVpn()){
+                    return view('backend.user.my_short_link_details',compact('short_link_details'));
+                }else{
+                    return "Please disable your vpn or proxy and refresh the browser";
+                }
+            }
+        }
         return view('backend.user.my_short_link_details',compact('short_link_details'));
     }
     // function to retrieve the effective url from shortend url
@@ -79,5 +165,4 @@ class UserController extends Controller
             return $last['response']['info']['url'];
         }
     }
-
 }

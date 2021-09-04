@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\user;
 
+use App\admin\AddWebsiteLink;
 use App\admin\ShortLink;
 use App\admin\ShortlinkClick;
 use App\Http\Controllers\Controller;
@@ -31,12 +32,10 @@ class ClickHistoryController extends Controller
         $click->network = $network->network;
         $click->service_provider_id = $network->autonomous_system_number;
         $click->service_provider = $network->autonomous_system_organization;
-        $click->v_code = rand(100000,999999);
         $click->save();
-        $link = ShortLink::where('id',$request->slink_id)->first();
+        $link = AddWebsiteLink::where('id',$request->slink_id)->first();
         $response = [];
-        $response['link'] = $link->websiteLink->website_link;
-        $response['id'] = $click->id;
+        $response['link'] = $link->short_link;
         return json_encode($response);
     }
 
