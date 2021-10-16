@@ -52,13 +52,13 @@ Apps
 </li>
 
 <li class=" ">
-    <a href="#">
+    <a href="{{route('refer')}}">
         <span class="pcoded-micon"><i class="feather icon-shield"></i></span>
         <span class="pcoded-mtext">Refar</span>
     </a>
 </li>
 <li class=" ">
-    <a href="#">
+    <a href="{{route('buy_credit')}}">
         <span class="pcoded-micon"><i class="feather icon-shield"></i></span>
         <span class="pcoded-mtext">Buy Credit</span>
     </a>

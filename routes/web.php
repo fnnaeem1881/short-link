@@ -55,5 +55,8 @@ route::group(['prefix'=>'user','namespace'=>'user','middleware'=>['user','checkV
     route::get('shortlink/details/{id}','UserController@myShortLinkDetails')->name('shortLink.details');
     route::post('shortlink/code/generate','ClickHistoryController@store')->name('code.generate');
     route::post('shortlink/code/verify','ClickHistoryController@verify')->name('code.verify');
+    route::get('buy/credit','UserController@buy_credit')->name('buy_credit');
+    route::get('refer','UserController@refer')->name('refer');
+
 });
 

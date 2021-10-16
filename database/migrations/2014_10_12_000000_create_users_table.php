@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->unsignedBigInteger('role_id')->nullable()->default(3);
-            $table-> foreign('role_id') -> references('id') -> on('roles')->onUpdate('cascade')->onDelete('set null');
+//            $table-> foreign('role_id') -> references('id') -> on('roles')->onUpdate('cascade')->onDelete('set null');
             $table->string('email')->unique();
             $table->integer('point')->default(0);
             $table->timestamp('email_verified_at')->nullable();

@@ -19,9 +19,15 @@
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
     <!-- Required Fremwork -->
+    <!-- ico font -->
+    <link rel="stylesheet" type="text/css" href="{{asset('frontend')}}/assets\icon\icofont\css\icofont.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('frontend')}}/bower_components\font-awesome\css\font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="{{asset('frontend')}}/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <!-- feather Awesome -->
     <link rel="stylesheet" type="text/css" href="{{asset('frontend/assets')}}/icon/feather/css/feather.css">
+    <!-- Data Table Css -->
+    <link rel="stylesheet" type="text/css" href="{{asset('frontend')}}/bower_components\datatables.net-bs4\css\dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('frontend')}}/assets\pages\data-table\css\buttons.dataTables.min.css">
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="{{asset('frontend/assets')}}/css/style.css">
     <link rel="stylesheet" type="text/css" href="{{asset('frontend/assets')}}/css/jquery.mCustomScrollbar.css">
@@ -525,7 +531,18 @@
     <script src="{{asset('frontend/assets')}}/js/vartical-layout.min.js"></script>
     <script type="text/javascript" src="{{asset('frontend/assets')}}/pages/dashboard/custom-dashboard.js"></script>
     <script type="text/javascript" src="{{asset('frontend/assets')}}/js/script.min.js"></script>
-
+    <!-- data-table js -->
+    <script src="{{asset('frontend')}}/bower_components\datatables.net\js\jquery.dataTables.min.js"></script>
+{{--    <script src="{{asset('frontend')}}/bower_components\datatables.net-buttons\js\dataTables.buttons.min.js"></script>--}}
+    <script src="{{asset('frontend')}}/assets\pages\data-table\js\jszip.min.js"></script>
+    <script src="{{asset('frontend')}}/assets\pages\data-table\js\pdfmake.min.js"></script>
+    <script src="{{asset('frontend')}}/assets\pages\data-table\js\vfs_fonts.js"></script>
+    <script src="{{asset('frontend')}}/bower_components\datatables.net-buttons\js\buttons.print.min.js"></script>
+    <script src="{{asset('frontend')}}/bower_components\datatables.net-buttons\js\buttons.html5.min.js"></script>
+    <script src="{{asset('frontend')}}/bower_components\datatables.net-bs4\js\dataTables.bootstrap4.min.js"></script>
+    <script src="{{asset('frontend')}}/bower_components\datatables.net-responsive\js\dataTables.responsive.min.js"></script>
+    <script src="{{asset('frontend')}}/bower_components\datatables.net-responsive-bs4\js\responsive.bootstrap4.min.js"></script>
+    <script src="{{asset('frontend')}}/assets\pages\data-table\js\data-table-custom.js"></script>
   @yield('custom_js')
 </body>
 </html>

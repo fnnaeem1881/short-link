@@ -81,4 +81,13 @@ class UserController extends Controller
             return $last['response']['info']['url'];
         }
     }
+
+public function buy_credit(){
+        return view('backend.user.buy_credit');
+}
+public function refer(){
+        return view('backend.user.refer');
+}
+
+
 }

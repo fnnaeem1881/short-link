@@ -97,3 +97,79 @@
   <script type="text/javascript" src="{{asset('frontend/assets')}}/js/script.min.js"></script>
 </body>
 </html>
+
+
+
+    <div class="wrapper animsition" data-animsition-in-class="fade-in" data-animsition-in-duration="1000" data-animsition-out-class="fade-out" data-animsition-out-duration="1000">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light navbar-default navbar-fixed-top" role="navigation">
+               <div class="container">
+                   <a class="navbar-brand page-scroll" href="#main"><img src="assets/logos/logo.png" alt="adminity Logo" /></a>
+                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                       <span class="navbar-toggler-icon"></span>
+                   </button>
+                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                       <ul class="navbar-nav mr-auto">
+                       </ul>
+                       <ul class="navbar-nav my-2 my-lg-0">
+                           <li class="nav-item">
+                               <a class="nav-link page-scroll" href="#main">Home</a>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link page-scroll" href="#services">Blog</a>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link page-scroll" href="#features">About</a>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link page-scroll" href="#reviews">Contact</a>
+                           </li>
+                            @guest
+
+                           <li class="nav-item">
+                               <a class="nav-link" href="{{ route('login') }}">Login</a>
+                           </li>
+                           @if (Route::has('register'))
+                           <li class="nav-item">
+                               <a class="nav-link" href="{{ route('register') }}">Singup</a>
+                           </li>
+                           @endif
+                           @else
+                           <li class="nav-item">
+                            <a class="nav-link page-scroll" href="{{ route('userdashboard') }}"> {{ Auth::user()->name }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                          document.getElementById('logout-form').submit();">Logout</a>
+ <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+    @csrf
+</form>
+                        </li>
+                           @endguest
+                       </ul>
+                   </div>
+               </div>
+           </nav>
+       </div>
+
+
+
+
+        @yield('content')
+
+
+
+
+        <!-- Scroll To Top -->
+        <a id="back-top" class="back-to-top page-scroll" href="#main">
+            <i class="ion-ios-arrow-thin-up"></i>
+        </a>
+        <!-- Scroll To Top Ends-->
+    <!-- Main Section -->
+    </div>
+
+
+
+
+<!-- Footer -->

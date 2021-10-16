@@ -1,0 +1,395 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: "";
+  content: none; }
+
+q:before, q:after {
+  content: "";
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* colors */
+/* widths */
+/* mixins */
+/* basic styles */
+/* faq block */
+.faq-block {
+  margin: 0 auto; }
+  .faq-block a {
+    color: #2acb5b;
+    text-decoration: none; }
+  .faq-block .faq-header {
+    overflow: hidden;
+    line-height: 29px; }
+    .faq-block .faq-header img {
+      vertical-align: middle;
+      margin-right: 12px;
+      float: left; }
+    .faq-block .faq-header h2 {
+      color: #2f2f2f;
+      float: left;
+      font-size: 20px;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 800;
+      vertical-align: middle; }
+    .faq-block .faq-header .back-link {
+      float: right;
+      font-size: 14px;
+      padding-right: 5px; }
+      .faq-block .faq-header .back-link a {
+        color: #2f2f2f;
+        text-decoration: none; }
+  .faq-block .faq-content {
+    padding: 0 66px 72px; }
+    .faq-block .faq-content .faq-menu {
+      background: #2acb5b;
+      border-radius: 4px;
+      border: 1px solid #18ae4a;
+      height: 40px;
+      line-height: 40px;
+      margin-bottom: 43px;
+      position: relative;
+      z-index: 999; }
+      .faq-block .faq-content .faq-menu li {
+        display: inline-block;
+        color: #fff;
+        font-size: 15px;
+        padding: 0 9px; }
+        .faq-block .faq-content .faq-menu li:hover, .faq-block .faq-content .faq-menu li.active {
+          background-color: #18ae4a; }
+        .faq-block .faq-content .faq-menu li a {
+          color: #fff;
+          text-decoration: none;
+          display: block; }
+        .faq-block .faq-content .faq-menu li#gear {
+          padding: 0; }
+          .faq-block .faq-content .faq-menu li#gear:hover {
+            background: #2acb5b; }
+          .faq-block .faq-content .faq-menu li#gear i {
+            padding: 0 7px;
+            height: 30px;
+            line-height: 32px;
+            position: relative;
+            border-radius: 4px;
+            cursor: pointer; }
+            .faq-block .faq-content .faq-menu li#gear i:hover, .faq-block .faq-content .faq-menu li#gear i.clicked {
+              background-color: #18ae4a; }
+          .faq-block .faq-content .faq-menu li#gear .gear-menu {
+            position: absolute;
+            right: 0;
+            top: 26px;
+            display: none;
+            background-color: #18ae4a;
+            font-family: "Open sans", sans-serif;
+            border-radius: 4px;
+            text-align: center; }
+            .faq-block .faq-content .faq-menu li#gear .gear-menu li {
+              font-size: 13px;
+              white-space: nowrap; }
+            .faq-block .faq-content .faq-menu li#gear .gear-menu a:hover {
+              text-decoration: underline; }
+    .faq-block .faq-content .center-block {
+      clear: both;
+      text-align: center; }
+    .faq-block .faq-content .language {
+      font-size: 14px;
+      margin-bottom: 15px;
+      overflow: hidden;
+      line-height: 30px; }
+    .faq-block .faq-content .gray-block {
+      border: 1px solid #dbdbdb;
+      border-radius: 4px;
+      background: #f1f1f1;
+      padding: 23px 79px 0;
+      margin-bottom: 60px; }
+      .faq-block .faq-content .gray-block .button, .faq-block .faq-content .gray-block .button-gray {
+        top: 20px; }
+      .faq-block .faq-content .gray-block .select-description {
+        font-size: 12px;
+        float: right;
+        margin-top: 7px; }
+      .faq-block .faq-content .gray-block .browse-one-two {
+        float: left;
+        width: 50%;
+        text-align: center; }
+        .faq-block .faq-content .gray-block .browse-one-two form {
+          float: none; }
+          .faq-block .faq-content .gray-block .browse-one-two form select {
+            background-color: #fff; }
+      .faq-block .faq-content .gray-block h3 {
+        font-size: 20px;
+        border-bottom: 1px solid #dbdbdb;
+        padding-bottom: 6px;
+        margin-bottom: 25px; }
+      .faq-block .faq-content .gray-block p {
+        font-size: 14px;
+        margin-bottom: 24px;
+        line-height: 18px;
+        text-align: justify; }
+      .faq-block .faq-content .gray-block .categories {
+        font-size: 12px; }
+        .faq-block .faq-content .gray-block .categories ul {
+          display: inline-block; }
+          .faq-block .faq-content .gray-block .categories ul li {
+            display: inline-block;
+            height: 19px;
+            padding: 0 6px;
+            line-height: 19px;
+            margin: 0 2px;
+            background: #d7d7d7;
+            color: #8e8e8e;
+            border: 1px solid #c9c9c9;
+            border-radius: 4px; }
+        .faq-block .faq-content .gray-block .categories .edit-link {
+          float: right; }
+    .faq-block .faq-content .list-block {
+      overflow: hidden; }
+      .faq-block .faq-content .list-block table.list {
+        width: 100%;
+        margin-bottom: 15px; }
+        .faq-block .faq-content .list-block table.list tr {
+          border: 1px solid #fff; }
+          .faq-block .faq-content .list-block table.list tr:not(:first-child):hover {
+            background-color: #f1f1f1;
+            border: 1px solid #dbdbdb; }
+          .faq-block .faq-content .list-block table.list tr.answers td:not(:first-child) {
+            color: #2acb5b; }
+          .faq-block .faq-content .list-block table.list tr th, .faq-block .faq-content .list-block table.list tr td {
+            padding: 10px;
+            text-align: right;
+            border-bottom: 1px solid #dbdbdb; }
+            .faq-block .faq-content .list-block table.list tr th:first-child, .faq-block .faq-content .list-block table.list tr td:first-child {
+              text-align: left; }
+          .faq-block .faq-content .list-block table.list tr th {
+            font-size: 13px;
+            color: #8e8e8e; }
+          .faq-block .faq-content .list-block table.list tr td:not(:first-child) {
+            color: #8e8e8e; }
+          .faq-block .faq-content .list-block table.list tr td:nth-child(2), .faq-block .faq-content .list-block table.list tr td:nth-child(3) {
+            font-size: 22px; }
+        .faq-block .faq-content .list-block table.list a {
+          color: #2f2f2f;
+          text-decoration: none; }
+      .faq-block .faq-content .list-block .shows {
+        color: #8e8e8e;
+        font-size: 13px;
+        float: left; }
+      .faq-block .faq-content .list-block .pagination {
+        font-size: 13px;
+        color: #2acb5b;
+        margin-bottom: 30px; }
+        .faq-block .faq-content .list-block .pagination a {
+          color: #2acb5b;
+          text-decoration: none; }
+        .faq-block .faq-content .list-block .pagination ul {
+          border: 1px solid #dbdbdb;
+          border-radius: 4px;
+          text-align: center;
+          display: inline-block;
+          margin: 0 5px; }
+          .faq-block .faq-content .list-block .pagination ul li {
+            display: inline-block;
+            border-right: 1px solid #dbdbdb;
+            width: 29px;
+            height: 29px;
+            line-height: 29px; }
+            .faq-block .faq-content .list-block .pagination ul li:last-of-type {
+              border-right: none; }
+      .faq-block .faq-content .list-block .button, .faq-block .faq-content .list-block .button-gray {
+        font-size: 14px; }
+        .faq-block .faq-content .list-block .button i, .faq-block .faq-content .list-block .button-gray i {
+          margin-right: 12px;
+          vertical-align: middle; }
+    .faq-block .faq-content .top-questions {
+      overflow: hidden;
+      margin-bottom: 15px; }
+    .faq-block .faq-content .button, .faq-block .faq-content .button-gray {
+      background-color: #2acb5b;
+      border-radius: 4px;
+      text-align: center;
+      color: #fff;
+      display: inline-block;
+      padding: 0 30px;
+      cursor: pointer;
+      position: relative;
+      height: 40px;
+      line-height: 40px; }
+    .faq-block .faq-content .button-gray {
+      background-color: #f8f8f8;
+      border: 1px solid #dbdbdb;
+      color: #2f2f2f;
+      float: right;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 0 30px;
+      height: 30px;
+      line-height: 30px; }
+    .faq-block .faq-content form {
+      margin-top: 10px; }
+      .faq-block .faq-content form input {
+        color: #2acb5b;
+        width: 96%;
+        padding: 2%;
+        border-radius: 4px;
+        border: 1px solid #dbdbdb;
+        margin-bottom: 15px; }
+      .faq-block .faq-content form textarea {
+        width: 96%;
+        padding: 2%;
+        height: 140px;
+        font-family: "Open sans", sans-serif;
+        border: 1px solid #dbdbdb;
+        border-radius: 4px;
+        margin-bottom: 15px; }
+      .faq-block .faq-content form .label-select {
+        height: 34px;
+        line-height: 30px; }
+        .faq-block .faq-content form .label-select label {
+          font-size: 14px;
+          vertical-align: middle; }
+        .faq-block .faq-content form .label-select select.tags {
+          width: 50%;
+          border: 1px solid #dbdbdb;
+          border-radius: 4px;
+          height: 34px; }
+        .faq-block .faq-content form .label-select .select2-container {
+          float: right; }
+          .faq-block .faq-content form .label-select .select2-container .select2-selection {
+            height: 34px; }
+            .faq-block .faq-content form .label-select .select2-container .select2-selection .select2-selection__choice {
+              height: 22px;
+              line-height: 22px;
+              font-size: 14px;
+              background-color: #2acb5b;
+              color: #fff;
+              border-color: #18ae4a; }
+              .faq-block .faq-content form .label-select .select2-container .select2-selection .select2-selection__choice .select2-selection__choice__remove {
+                color: #fff; }
+                .faq-block .faq-content form .label-select .select2-container .select2-selection .select2-selection__choice .select2-selection__choice__remove:hover {
+                  color: #18ae4a; }
+    .faq-block .faq-content form.sort label {
+      margin-right: 10px; }
+    .faq-block .faq-content form.sort select {
+      width: 135px;
+      height: 34px;
+      border: 1px solid #dbdbdb;
+      background-color: #f8f8f8;
+      border-radius: 4px;
+      font-family: "Open sans", sans-serif;
+      font-weight: 600; }
+    .faq-block .faq-content h4 {
+      margin-bottom: 14px; }
+    .faq-block .faq-content .answer-block {
+      overflow: hidden;
+      margin-bottom: 9px; }
+      .faq-block .faq-content .answer-block .separator {
+        color: #f1f1f1;
+        margin: 0 13px; }
+      .faq-block .faq-content .answer-block .answer-header {
+        border-top: 1px solid #dbdbdb;
+        border-bottom: 1px solid #dbdbdb;
+        height: 35px;
+        line-height: 35px;
+        font-size: 14px;
+        padding: 0 12px;
+        color: #8e8e8e; }
+        .faq-block .faq-content .answer-block .answer-header .vote {
+          float: right; }
+          .faq-block .faq-content .answer-block .answer-header .vote .separator {
+            margin: 0; }
+          .faq-block .faq-content .answer-block .answer-header .vote .green {
+            color: #2acb5b;
+            font-size: 22px;
+            vertical-align: middle;
+            margin-left: 12px; }
+          .faq-block .faq-content .answer-block .answer-header .vote i {
+            cursor: pointer; }
+      .faq-block .faq-content .answer-block .answer-content {
+        font-size: 14px;
+        line-height: 18px;
+        margin: 15px;
+        overflow: hidden;
+        clear: both;
+        text-align: justify; }
+        .faq-block .faq-content .answer-block .answer-content p {
+          padding: 22px 12px; }
+      .faq-block .faq-content .answer-block form.add-comment-form {
+        padding-left: 100px;
+        clear: both;
+        display: none; }
+        .faq-block .faq-content .answer-block form.add-comment-form textarea {
+          height: 18px;
+          width: 95%; }
+      .faq-block .faq-content .answer-block .answer-controls {
+        float: right;
+        font-size: 12px;
+        padding-right: 10px;
+        color: #8e8e8e; }
+        .faq-block .faq-content .answer-block .answer-controls .comment-count, .faq-block .faq-content .answer-block .answer-controls .add-comment {
+          cursor: pointer; }
+        .faq-block .faq-content .answer-block .answer-controls .separator {
+          margin: 0 4px; }
+      .faq-block .faq-content .answer-block .comments {
+        margin-left: 100px;
+        clear: both;
+        display: none;
+        font-size: 13px; }
+        .faq-block .faq-content .answer-block .comments p {
+          padding-bottom: 5px; }
+        .faq-block .faq-content .answer-block .comments .comment {
+          padding: 15px 0;
+          border-top: 1px solid #dbdbdb;
+          overflow: hidden; }
+      .faq-block .faq-content .answer-block.top-answer {
+        background: #f8f8f8;
+        border-radius: 4px;
+        border: 1px solid #dbdbdb; }
+        .faq-block .faq-content .answer-block.top-answer .answer-header {
+          border-top: none; }
+
+.tooltip-theme {
+  background: #d7d7d7;
+  border-radius: 5px;
+  border: none;
+  color: #fff; }
+  .tooltip-theme .tooltipster-content {
+    font-family: "Open sans", sans-serif;
+    font-size: 11px;
+    line-height: 24px;
+    padding: 0 5px; }
+
+::-webkit-input-placeholder {
+  color: #2acb5b; }
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #2acb5b; }
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #2acb5b; }
+
+:-ms-input-placeholder {
+  color: #2acb5b; }
+
+/*# sourceMappingURL=style.css.map */
